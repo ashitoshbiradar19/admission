@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Engineering Admission Form</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: linear-gradient(135deg, #cfd9df, #e2ebf0);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    margin: 0;
+    color: #003366;
+}
+
+.header h3 {
+    margin: 8px 0;
+    color: #555;
+    font-weight: normal;
+}
+
+.header h2 {
+    margin-top: 10px;
+    color: #004080;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+td:first-child {
+    font-weight: 600;
+    color: #333;
+    width: 35%;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #004080;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,64,128,0.3);
+}
+
+textarea {
+    resize: none;
+}
+
+.gender-group input {
+    width: auto;
+    margin-right: 5px;
+}
+
+.gender-group label {
+    margin-right: 15px;
+}
+
+.photo-preview {
+    width: 120px;
+    height: 150px;
+    border-radius: 8px;
+    border: 1px dashed #aaa;
+    margin-top: 10px;
+    object-fit: cover;
+    display: block;
+}
+
+.btn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+input[type="submit"], input[type="reset"] {
+    width: 140px;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+}
+
+input[type="submit"] {
+    background: linear-gradient(135deg, #004080, #0066cc);
+    color: white;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(135deg, #003366, #0059b3);
+}
+
+input[type="reset"] {
+    background: #777;
+    color: white;
+}
+
+input[type="reset"]:hover {
+    background: #555;
+}
+
+@media (max-width: 768px) {
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    td:first-child {
+        margin-bottom: 5px;
+    }
+}
+</style>
+
+<script>
+function previewPhoto(event) {
+    const img = document.getElementById("photoPreview");
+    img.src = URL.createObjectURL(event.target.files[0]);
+}
+</script>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Rajarshi Shahu College of Engineering, Pune</h1>
+        <h3>(An Autonomous Institute Affiliated to SPPU)</h3>
+        <h2>Engineering College Admission Form</h2>
+    </div>
+
+    <form>
+        <table>
+            <tr>
+                <td>Full Name</td>
+                <td><input type="text" required></td>
+            </tr>
+
+            <tr>
+                <td>Date of Birth</td>
+                <td><input type="date" required></td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td class="gender-group">
+                    <label><input type="radio" name="gender"> Male</label>
+                    <label><input type="radio" name="gender"> Female</label>
+                    <label><input type="radio" name="gender"> Other</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td><input type="email" required></td>
+            </tr>
+
+            <tr>
+                <td>Mobile Number</td>
+                <td><input type="tel" required></td>
+            </tr>
+
+            <tr>
+                <td>Address</td>
+                <td><textarea rows="3"></textarea></td>
+            </tr>
+
+            <tr>
+                <td>10th Board</td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td>10th Percentage</td>
+                <td><input type="number" step="0.01"></td>
+            </tr>
+
+            <tr>
+                <td>12th Board</td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td>12th Percentage</td>
+                <td><input type="number" step="0.01"></td>
+            </tr>
+
+            <tr>
+                <td>Physics Marks</td>
+                <td><input type="number"></td>
+            </tr>
+
+            <tr>
+                <td>Chemistry Marks</td>
+                <td><input type="number"></td>
+            </tr>
+
+            <tr>
+                <td>Mathematics Marks</td>
+                <td><input type="number"></td>
+            </tr>
+
+            <tr>
+                <td>Entrance Exam</td>
+                <td>
+                    <select>
+                        <option>Select Exam</option>
+                        <option>JEE Main</option>
+                        <option>JEE Advanced</option>
+                        <option>MHT-CET</option>
+                        <option>Other</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Entrance Percentile</td>
+                <td><input type="number" step="0.01"></td>
+            </tr>
+
+            <tr>
+                <td>Branch Applied For</td>
+                <td>
+                    <select>
+                        <option>Select Branch</option>
+                        <option>Computer Science Engineering</option>
+                        <option>Information Technology</option>
+                        <option>Electronics & Communication</option>
+                        <option>Electrical Engineering</option>
+                        <option>Mechanical Engineering</option>
+                        <option>Civil Engineering</option>
+                        <option>AI & Data Science</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Upload Photo</td>
+                <td>
+                    <input type="file" accept="image/*" onchange="previewPhoto(event)" required>
+                    <img id="photoPreview" class="photo-preview">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Upload Marksheets</td>
+                <td><input type="file" multiple></td>
+            </tr>
+        </table>
+
+        <div class="btn">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
